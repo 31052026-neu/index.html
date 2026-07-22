@@ -2,7 +2,7 @@ html,
 body {
   /*Definiert das Gesamtbild*/
   font-family: Arial, sans-serif, geneva;
-  background-image: url("/html_kalender/background1.jpg");
+  background-image: url("/html_kalender/assets/images/background1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
