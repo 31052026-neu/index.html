@@ -7,7 +7,7 @@ body {
 body {
   /*Definiert das Gesamtbild*/
   font-family: Arial, sans-serif, geneva;
-  background-image: url("background.avif");
+  background-image: url("/html_kalender/background1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -18,74 +18,86 @@ body {
 table {
   /*Definiert die Tabelle*/
   border-collapse: collapse;
-  width: 800px;
+  width: 900px;
   margin: auto;
+  margin-bottom: 6%;
+  margin-top: 5%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0.1.8);
 }
 th,
 td {
   /*Definiert die Kästchen der Tabelle*/
-  border: 5px solid #706716;
-  padding: 15px;
+  border: 10px solid #070706;
+  padding: 55px;
   text-align: center;
+  background-color: #221919b4;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 1.8);
 }
 td {
   /*Definiert Tabelle ohne Kopfzeile*/
-  border: 5px solid #b63e06;
+  border: 5px solid #1d1c1c;
   height: 50px; /*Höhe von der Tabelle*/
   padding: 20px; /*Abstand von Schriften zum Rahmen*/
   text-align: center; /*Bestimmt wo die Zahl in den Kästen steht*/
+  background-color: #25211fad;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 1.8);
 }
 td:hover {
   /*Gibt dem Text "Historische Ereignisse" gewisse Eigenschaften*/
-  background-color: rgb(
+  background-color: rgba(
     168,
     3,
-    17
+    17,
+    0.349
   ); /*Farbe wird rot, wenn man mit den Cursor drüber geht*/
 }
 .Samstag {
   /* Definiert die Spalte "Samtag"*/
-  background-color: #0c08e4;
+  background-color: #0c08e4a4;
 }
 .Sonntag {
   /*Definiert die Spalte "Sonntag"*/
-  background-color: #ee0606;
+  background-color: #ee060698;
 }
 .historische_ereignisse {
   /*Definiert den Text "Historische Ereignisse"*/
-  border-style: outset;
   border: groove;
-  border-color: #000;
+  border-color: #0705056c;
+  background-color: #4b423c;
+  margin: 0 auto;
   margin: auto;
+  width: 50%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 2.8);
 }
 .obriger_text {
-  font-size: 20px;
+  font-size: 1%;
   alignment-baseline: text-bottom;
 }
 p {
   color: #070303;
   font-size: 28px;
 }
-.historische_ereignisse {
-  color: #020202;
-  font-size: 30px;
-  border-style: gove;
-  text-shadow: 1px 1px rgb(233, 155, 37);
+.historische_ereignisse :hover {
+  color: #8f5512;
+  font-size: 24px;
+  border-collapse: collapse;
   text-align: center;
   width: 60%;
+  margin: auto;
+}
 .kalender {
-  color: #020101;
+  color: white;
+  text-align: center;
+  font-size: larger;
 }
 .obriger_text {
-  border: solid;
-  border-color: #070303;
-  color: rgb(8, 2, 2);
-}
-.Kalenderblatt:hover {
-  border: solid;
-  border-color: #070303;
-  background-color: #1593c5;
+  font-size: 30px;
+  color: rgb(235, 225, 225);
+  box-shadow: 10px 10px 10px 10px rgba(1.8, 1.8, 1.8, 1.8);
 }
 th {
   color: rgb(165, 22, 117);
+}
+h2 {
+  text-align: center;
 }
