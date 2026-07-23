@@ -7,13 +7,13 @@ body {
 body {
   /*Definiert das Gesamtbild*/
   font-family: Arial, sans-serif, geneva;
-  background-image: url("html_kalender\assets\images\background.avif");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   margin: 0;
   min-height: 10h;
+  background-image: url("assets/images/background.avif");
 }
 table {
   /*Definiert die Tabelle*/
