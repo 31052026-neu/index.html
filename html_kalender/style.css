@@ -1,19 +1,21 @@
 html,
 body {
   width: 100%;
-  heigt: 100%;
+  height: 100%;
   margin: auto;
 }
-body {
-  /*Definiert das Gesamtbild*/
-  font-family: Arial, sans-serif, geneva;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  margin: 0;
-  min-height: 10h;
-  background-image: url("assets/images/background.avif");
+h1{
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 15px #f80505
+}
+h2 {
+  text-align: center;
+  text-shadow: 2px 2px 15px #f80505
+}
+.obriger_text {                                 //*Definiert den Text unter der Überschrift "Kalenderblatt vom 13.06.2025"*/
+  font-size: 30px;
+  color: rgb(235, 225, 225);
+  text-shadow: 2px 2px 15px #f80505
 }
 table {
   /*Definiert die Tabelle*/
@@ -24,6 +26,26 @@ table {
   margin-top: 5%;
   box-shadow: 10px 10px 10px rgba(0, 0, 0.1.8);
 }
+th {                                          //*definiert die Kopfzeile der Tabelle*/
+  color: rgb(165, 22, 117);
+  text-shadow: 2px 2px 15px #f80505
+}
+.kalender {
+  color: rgb(198, 21, 21);
+  text-align: center;
+  font-size: larger;
+}
+body {
+                                              //*Definiert das Gesamtbild*/
+  font-family: Arial, sans-serif, geneva;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  min-height: 10h;
+  background-image: url("assets/images/background.avif");
+}
 th,
 td {
   /*Definiert die Kästchen der Tabelle*/
@@ -32,6 +54,7 @@ td {
   text-align: center;
   background-color: #221919b4;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 1.8);
+  text-shadow: 2px 2px 15px #f80505
 }
 td {
   /*Definiert Tabelle ohne Kopfzeile*/
@@ -49,7 +72,7 @@ td:hover {
     3,
     17,
     0.349
-  ); /*Farbe wird rot, wenn man mit den Cursor drüber geht*/
+    ); /*Farbe wird rot, wenn man mit den Cursor drüber geht*/
 }
 .Samstag {
   /* Definiert die Spalte "Samtag"*/
@@ -63,41 +86,22 @@ td:hover {
   /*Definiert den Text "Historische Ereignisse"*/
   border: groove;
   border-color: #0705056c;
+  border-width: 5px;
+  border-radius: 90px;
   background-color: #4b423c;
-  margin: 0 auto;
   margin: auto;
   width: 50%;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 2.8);
 }
-.obriger_text {
-  font-size: 1%;
-  alignment-baseline: text-bottom;
-}
-p {
-  color: #070303;
-  font-size: 28px;
-}
 .historische_ereignisse :hover {
   color: #8f5512;
   font-size: 24px;
-  border-collapse: collapse;
+  border-collapse: colla;
   text-align: center;
   width: 60%;
   margin: auto;
 }
-.kalender {
-  color: white;
-  text-align: center;
-  font-size: larger;
-}
-.obriger_text {
-  font-size: 30px;
-  color: rgb(235, 225, 225);
-  box-shadow: 10px 10px 10px 10px rgba(1.8, 1.8, 1.8, 1.8);
-}
-th {
-  color: rgb(165, 22, 117);
-}
-h2 {
-  text-align: center;
+p {
+  color: #070303;
+  font-size: 28px;
 }

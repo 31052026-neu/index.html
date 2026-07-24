@@ -2,7 +2,7 @@ html,
 body {
   /*Definiert das Gesamtbild*/
   font-family: Arial, sans-serif, geneva;
-  background-image: url("background1.jpg");
+  background-image: url("assets/images/background.avif");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -14,9 +14,12 @@ h1 {
   padding-left: 35%;
   font-size: 550%;
   color: aliceblue;
+  text-shadow: 2px 2px 15px #f80505;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 1.8);
 }
 ul {
   padding-left: 15%;
   font-size: 250%;
   color: rgb(230, 216, 216);
+  text-shadow: 2px 2px 15px #f80505;
 }
