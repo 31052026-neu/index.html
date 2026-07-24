@@ -5,7 +5,7 @@ body {
   margin: auto;
 }
 h1{
-  color: rgb(255, 255, 255);
+  color: rgb(236, 232, 232);
   text-shadow: 2px 2px 15px #f80505
 }
 h2 {
@@ -19,16 +19,62 @@ h2 {
 }
 table {
   /*Definiert die Tabelle*/
-  border-collapse: collapse;
+  border-collapse: separate;
   width: 900px;
   margin: auto;
   margin-bottom: 6%;
   margin-top: 5%;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0.1.8);
+  box-shadow: 0px 0px 30px #fb0101
 }
-th {                                          //*definiert die Kopfzeile der Tabelle*/
-  color: rgb(165, 22, 117);
-  text-shadow: 2px 2px 15px #f80505
+.montag{
+  background-image: url("assets/images/wochentage.jpg");
+   color: white;
+  text-shadow: 2px 2px 15px #eae4e4;
+}
+.dienstag {
+  background-image: url("assets/images/wochentage.jpg");
+   color: white;
+  text-shadow: 2px 2px 15px #eae4e4
+}
+.mittwoch {
+  background-image: url("assets/images/wochentage.jpg");
+  color: white;
+  text-shadow: 2px 2px 15px #eae4e4
+}
+.donnerstag {
+  background-image: url("assets/images/wochentage.jpg");
+   color: white;
+  text-shadow: 2px 2px 15px #eae4e4
+}
+.freitag  {
+  background-image: url("assets/images/wochentage.jpg");
+   color: white;
+  text-shadow: 2px 2px 15px #eae4e4
+}
+.samstag  {
+  background-image: url("assets/images/samstag_background_new.png");
+  color: white;
+  text-shadow: 2px 2px 15px #eae4e4
+}
+.sonntag  {
+  background-image: url("assets/images/sonntag.webp");
+  color: white;
+  text-shadow: 2px 2px 15px #eae4e4
+}
+.wochenende_1:hover {
+  background-image: url("assets/images/samstag_background_new.png");
+  color: white;
+  text-shadow: 2px 2px 15px #eae4e4
+}
+.wochenende_2:hover {
+  background-image: url("assets/images/sonntag.webp");
+  color: white;
+  text-shadow: 2px 2px 15px #eae4e4
+}
+.tag:hover {
+  background-image: url("assets/images/wochentage.jpg");
+  color: white;
+  text-shadow: 2px 2px 15px #eae4e4
 }
 .kalender {
   color: rgb(198, 21, 21);
@@ -36,7 +82,6 @@ th {                                          //*definiert die Kopfzeile der Tab
   font-size: larger;
 }
 body {
-                                              //*Definiert das Gesamtbild*/
   font-family: Arial, sans-serif, geneva;
   background-size: cover;
   background-repeat: no-repeat;
@@ -49,38 +94,22 @@ body {
 th,
 td {
   /*Definiert die Kästchen der Tabelle*/
-  border: 10px solid #070706;
-  padding: 55px;
-  text-align: center;
-  background-color: #221919b4;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 1.8);
-  text-shadow: 2px 2px 15px #f80505
-}
-td {
-  /*Definiert Tabelle ohne Kopfzeile*/
-  border: 5px solid #1d1c1c;
+  border: 5px solid #645d5d;
+  padding: 55px;/*Definiert Tabelle ohne Kopfzeile*/
+  border: 5px solid #645d5d;
   height: 50px; /*Höhe von der Tabelle*/
   padding: 20px; /*Abstand von Schriften zum Rahmen*/
   text-align: center; /*Bestimmt wo die Zahl in den Kästen steht*/
   background-color: #25211fad;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 1.8);
+  text-align: center;
+  background-color: #221919b4;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 1.8);
+  text-shadow: 2px 2px 15px #f70404
 }
 td:hover {
   /*Gibt dem Text "Historische Ereignisse" gewisse Eigenschaften*/
-  background-color: rgba(
-    168,
-    3,
-    17,
-    0.349
-    ); /*Farbe wird rot, wenn man mit den Cursor drüber geht*/
-}
-.Samstag {
-  /* Definiert die Spalte "Samtag"*/
-  background-color: #0c08e4a4;
-}
-.Sonntag {
-  /*Definiert die Spalte "Sonntag"*/
-  background-color: #ee060698;
+  background-color: rgba(168,3,17,0.349); /*Farbe wird rot, wenn man mit den Cursor drüber geht*/
 }
 .historische_ereignisse {
   /*Definiert den Text "Historische Ereignisse"*/
@@ -102,6 +131,5 @@ td:hover {
   margin: auto;
 }
 p {
-  color: #070303;
-  font-size: 28px;
+font-size: 28px;
 }
