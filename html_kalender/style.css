@@ -1,135 +1,153 @@
 html,
 body {
   width: 100%;
-  height: 100%;
-  margin: auto;
+  min-height: 100%;
+  margin: 0;
 }
-h1{
+body {
+  min-height: 100vh;
+  font-family: Arial, Geneva, sans-serif;
+  background-image: url("assets/images/background.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+/* Überschrift des Kalenderblatts */
+h1 {
   color: rgb(236, 232, 232);
-  text-shadow: 2px 2px 15px #f80505
+  text-shadow: 2px 2px 15px #f80505;
 }
+/* Überschrift der historischen Ereignisse */
 h2 {
   text-align: center;
-  text-shadow: 2px 2px 15px #f80505
+  text-shadow: 2px 2px 15px #f80505;
 }
-.obriger_text {                                 //*Definiert den Text unter der Überschrift "Kalenderblatt vom 13.06.2025"*/
+/* Text unter der Überschrift */
+.obriger_text {
   font-size: 30px;
   color: rgb(235, 225, 225);
-  text-shadow: 2px 2px 15px #f80505
+  text-shadow: 2px 2px 15px #f80505;
 }
-table {
-  /*Definiert die Tabelle*/
-  border-collapse: separate;
-  width: 900px;
-  margin: auto;
-  margin-bottom: 6%;
-  margin-top: 5%;
-  box-shadow: 0px 0px 30px #fb0101
-}
-.montag{
-  background-image: url("assets/images/wochentage.jpg");
-   color: white;
-  text-shadow: 2px 2px 15px #eae4e4;
-}
-.dienstag {
-  background-image: url("assets/images/wochentage.jpg");
-   color: white;
-  text-shadow: 2px 2px 15px #eae4e4
-}
-.mittwoch {
-  background-image: url("assets/images/wochentage.jpg");
-  color: white;
-  text-shadow: 2px 2px 15px #eae4e4
-}
-.donnerstag {
-  background-image: url("assets/images/wochentage.jpg");
-   color: white;
-  text-shadow: 2px 2px 15px #eae4e4
-}
-.freitag  {
-  background-image: url("assets/images/wochentage.jpg");
-   color: white;
-  text-shadow: 2px 2px 15px #eae4e4
-}
-.samstag  {
-  background-image: url("assets/images/samstag_background_new.png");
-  color: white;
-  text-shadow: 2px 2px 15px #eae4e4
-}
-.sonntag  {
-  background-image: url("assets/images/sonntag.webp");
-  color: white;
-  text-shadow: 2px 2px 15px #eae4e4
-}
-.wochenende_1:hover {
-  background-image: url("assets/images/samstag_background_new.png");
-  color: white;
-  text-shadow: 2px 2px 15px #eae4e4
-}
-.wochenende_2:hover {
-  background-image: url("assets/images/sonntag.webp");
-  color: white;
-  text-shadow: 2px 2px 15px #eae4e4
-}
-.tag:hover {
-  background-image: url("assets/images/wochentage.jpg");
-  color: white;
-  text-shadow: 2px 2px 15px #eae4e4
-}
+/* Gesamter Kalenderbereich */
 .kalender {
   color: rgb(231, 227, 227);
   text-align: center;
   font-size: larger;
 }
-body {
-  font-family: Arial, sans-serif, geneva;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  margin: 0;
-  min-height: 10h;
-  background-image: url("assets/images/background.avif");
+/* Kalendertabelle */
+table {
+  width: 900px;
+  max-width: 95%;
+  margin: 5% auto 6%;
+  border-collapse: separate;
+  table-layout: fixed;
+  box-shadow: 0 0 30px #fb0101;
 }
+
+/* Wochentage Montag bis Freitag */
+.montag,
+.dienstag,
+.mittwoch,
+.donnerstag,
+.freitag {
+  background-image: url("assets/images/wochentage.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 2px 2px 15px #eae4e4;
+}
+/* Samstag */
+.samstag {
+  background-image: url("assets/images/samstag_background_new.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 2px 2px 15px #eae4e4;
+}
+/* Sonntag */
+.sonntag {
+  background-image: url("assets/images/sonntag.webp");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 2px 2px 15px #eae4e4;
+}
+/* Tabellenköpfe und Kalenderzellen */
 th,
 td {
-  /*Definiert die Kästchen der Tabelle*/
+  height: 50px;
+  padding: 20px;
   border: 5px solid #645d5d;
-  padding: 55px;/*Definiert Tabelle ohne Kopfzeile*/
-  border: 5px solid #645d5d;
-  height: 50px; /*Höhe von der Tabelle*/
-  padding: 20px; /*Abstand von Schriften zum Rahmen*/
-  text-align: center; /*Bestimmt wo die Zahl in den Kästen steht*/
-  background-color: #25211fad;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 1.8);
+  background-color: rgba(34, 25, 25, 0.71);
   text-align: center;
-  background-color: #221919b4;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 1.8);
-  text-shadow: 2px 2px 15px #f70404
+  text-shadow: 2px 2px 15px #f70404;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+  transition:
+    background-color 0.3s,
+    background-image 0.3s,
+    transform 0.3s;
 }
+/* Hover-Effekt für normale Wochentage */
+.tag:hover {
+  background-image: url("assets/images/wochentage.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 2px 2px 15px #eae4e4;
+  transform: scale(1.05);
+}
+/* Hover-Effekt für Samstage */
+.wochenende_1:hover {
+  background-image: url("assets/images/samstag_background_new.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 2px 2px 15px #eae4e4;
+  transform: scale(1.05);
+}
+/* Hover-Effekt für Sonntage */
+.wochenende_2:hover {
+  background-image: url("assets/images/sonntag.webp");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-shadow: 2px 2px 15px #eae4e4;
+  transform: scale(1.05);
+}
+/* Allgemeiner Hover-Effekt für Zellen */
 td:hover {
-  /*Gibt dem Text "Historische Ereignisse" gewisse Eigenschaften*/
-  background-color: rgba(168,3,17,0.349); /*Farbe wird rot, wenn man mit den Cursor drüber geht*/
+  background-color: rgba(168, 3, 17, 0.35);
+  cursor: pointer;
 }
+/* Bereich für historische Ereignisse */
 .historische_ereignisse {
-  /*Definiert den Text "Historische Ereignisse"*/
-  border: groove;
-  border-color: #0705056c;
-  border-width: 5px;
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  border: 5px groove rgba(7, 5, 5, 0.42);
   border-radius: 90px;
   background-color: #4b423c;
-  margin: auto;
-  width: 50%;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 2.8);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+  transition:
+    width 0.3s,
+    color 0.3s,
+    font-size 0.3s;
 }
-.historische_ereignisse :hover {
+/* Hover über den gesamten Bereich */
+.historische_ereignisse:hover {
+  width: 60%;
   color: #8f5512;
   font-size: 24px;
-  border-collapse: colla;
-  text-align: center;
-  width: 60%;
-  margin: auto;
 }
+/* Allgemeine Absatzgröße */
 p {
-font-size: 28px;
+  font-size: 28px;
+}
+.heute {
+  background-color: #ffd900;
+  color: black;
+  font-weight: bold;
+  border: 5px solid white;
+  transform: scale(1.08);
 }

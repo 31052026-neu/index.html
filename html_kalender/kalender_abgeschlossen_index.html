@@ -1,25 +1,22 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="de">
 <head>
-  <title> Kalenderblatt vom 13.06.2025</title>
-  <link rel="stylesheet" href="style.css" />
-<meta name="viewport" content ="width=device-width, initial-scale=0.75">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.75">
+  <title>Kalenderblatt</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<div class="kalender">
-  <p>
-
-    <body>
-      <h1 class="Kalenderblatt">Kalenderblatt vom 13.06.2025</h1>
-      <br />
-      <p class="obriger_text">
-        Der 13. Juni 2025 ist ein Freitag und zwar der zweite Freitag im Monat Juni
-        des Jahres 2025. Es handelt sich um den 164. Tag des Jahres, was bedeutet,
-        dass es noch 201 Tage bis zum jahresende sind. Der Monat Juni hat insgesamt
-        30 Tage. Heute ist kein gesetzlicher Feiertag in Deutschland.
-      </p>
-      <br>
-      <table>
+<body>
+  <div class="kalender">
+    <h1 id="Mainheadline">Kalenderblatt</h1>
+    <p class="obriger_text">
+      Der 13. Juni 2025 ist ein Freitag und zwar der zweite Freitag im Monat Juni
+      des Jahres 2025. Es handelt sich um den 164. Tag des Jahres, was bedeutet,
+      dass es noch 201 Tage bis zum Jahresende sind. Der Monat Juni hat insgesamt
+      30 Tage. Heute ist kein gesetzlicher Feiertag in Deutschland.
+    </p>
+    <table>
+      <thead>
         <tr>
           <th class="montag">Mo</th>
           <th class="dienstag">Di</th>
@@ -29,62 +26,20 @@
           <th class="samstag">Sa</th>
           <th class="sonntag">So</th>
         </tr>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="tag">1</td>
-            <td class="wochenende_1">2</td>
-            <td class="wochenende_2">3</td>
-          </tr>
-          <tr>
-            <td class="tag">4</td>s
-            <td class="tag">5</td>
-            <td class="tag">6</td>
-            <td class="tag">7</td>
-            <td class="tag">8</td>
-            <td class="wochenende_1">9</td>
-            <td class="wochenende_2">10</td>
-          </tr>
-          <tr>
-            <td class="tag">11</td>
-            <td class="tag">12</td>
-            <td class="tag">13</td>
-            <td class="tag">14</td>
-            <td class="tag">15</td>
-            <td class="wochenende_1">16</td>
-            <td class="wochenende_2">17</td>
-          </tr>
-          <tr>
-            <td class="tag">18</td>
-            <td class="tag">19</td>
-            <td class="tag">20</td>
-            <td class="tag">21</td>
-            <td class="tag">22</td>
-            <td class="wochenende_1">23</td>
-            <td class="wochenende_2">24</td>
-          </tr>
-          <tr>
-            <td class="tag">25</td>
-            <td class="tag">26</td>
-            <td class="tag">27</td>
-            <td class="tag">28</td>
-            <td class="tag">29</td>
-            <td class="wochenende_1">30</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="historische_ereignisse">
-        <p>
-        <h2> <a href="historische_Ereignisse.html">Historische Ereignisse</a>
-          </a>
-        </h2>
-        <ul id="historische_ereignisse"></ul>
-  </p>
-
-</div>
+      </thead>
+      <tbody id="kalenderInhalt">
+        
+      </tbody>
+    </table>
+    <div class="historische_ereignisse">
+      <h2>
+        <a href="historische_Ereignisse.html">
+          Historische Ereignisse
+        </a>
+      </h2>
+      <ul id="historische_ereignisse"></ul>
+    </div>
+  </div>
+  <script src="Kalender.js"></script>
 </body>
-
 </html>
