@@ -36,3 +36,12 @@ let tableCell = document.createElement ("td");
 row.appendChild (tableCell);
 
 tableCell.textContent = 1;
+for (let day = 1; day <=numberOfDays; day++) {      //(i;i=;i++) Variablen für i eingefügt. day auch den Wert "1" gegeben
+    let tableCell = document.createElement("td");   //Erstelle eine neue tabellenzelle und speichere sie in "tableCell" (td)
+    tableCell.textContent = day;                    //schreibt text in die html datei und zwar den wert von "Day" in (td)
+    row.appendChild = tableCell;                    // Füge die Tabellenzelle in die Tabellenzeile ein.
+    if (day % 7 == 0 && day != numberOfDays) {
+        row= document.createElement ("tr");
+        kalenderInhalt.appendChild(row);
+    }
+}
