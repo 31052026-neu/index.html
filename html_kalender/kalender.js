@@ -29,3 +29,10 @@ if (firstWeekday ==0) {
     firstWeekday = 7;
 }
 console.log ("Angepasster Wochentag:", firstWeekday);
+let row = document.createElement ("tr");
+kalenderInhalt.appendChild (row);
+
+let tableCell = document.createElement ("td");
+row.appendChild (tableCell);
+
+tableCell.textContent = 1;
