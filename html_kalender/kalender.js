@@ -13,3 +13,12 @@ let year = today.getFullYear();
 
 // Überschrift des Kalenders setzen
 headline.textContent = "Kalenderblatt vom " + day + "." + month + "." + year;
+
+let dayText = document.getElementById("day1");
+dayText.textContent = today.getDate();
+
+let monthText = document.getElementById("month1");
+monthText.textContent = today.getMonth();
+
+let yearText = document.getElementById("year1");
+yearText.textContent = today.getFullYear();

@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=0.75">
   <title>Kalenderblatt</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="kalender">
     <h1 id="Mainheadline">Kalenderblatt</h1>
     <p class="obriger_text">
-      Der 13. Juni 2025 ist ein Freitag und zwar der zweite Freitag im Monat Juni
-      des Jahres 2025. Es handelt sich um den 164. Tag des Jahres, was bedeutet,
-      dass es noch 201 Tage bis zum Jahresende sind. Der Monat Juni hat insgesamt
-      30 Tage. Heute ist kein gesetzlicher Feiertag in Deutschland.
+      Der <span id="day1"></span>. <span id="month1"></span> <span id="year1"></span> ist ein Freitag und zwar der
+      zweite Freitag im Monat Juni
+      des Jahres <span id="year1"></span>. Es handelt sich um den 164. Tag des Jahres, was bedeutet,
+      dass es noch 201 Tage bis zum Jahresende sind. Der Monat <span id="month1"></span> hat insgesamt
+      31 Tage. Heute ist kein gesetzlicher Feiertag in Deutschland.
     </p>
     <table>
       <thead>
@@ -28,7 +31,7 @@
         </tr>
       </thead>
       <tbody id="kalenderInhalt">
-        
+
       </tbody>
     </table>
     <div class="historische_ereignisse">
@@ -42,4 +45,5 @@
   </div>
   <script src="Kalender.js"></script>
 </body>
+
 </html>
