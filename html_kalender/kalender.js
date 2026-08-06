@@ -192,3 +192,31 @@ if (holidays.includes(currentDate)) {
   // Den entsprechenden Text im HTML-Element anzeigen.
   holidaysText.textContent = "Heute ist kein Feiertag";
 }
+// bis hier hin ist alles für den obrigen Text
+let calenderContent = document.getElementById("calenderContent");
+let numbersOfDays = monthDays[currentMonth];
+
+let firstWeekday = new Date(year, currentMonth, 1).getDay();
+
+if (firstWeekday === 0) {
+  firstWeekday = 7;
+}
+let row = document.createElement("tr");
+calenderContent.appendChild(row);
+
+for (i = 1; i < firstWeekday; i++) {
+  let emptyCell = document.createElement("td");
+  row.appendChild(emptyCell);
+}
+for (let i = 1; i <= numbersOfDays; i++) {
+  let tableCell = document.createElement("td");
+  tableCell.textContent = i;
+  row.appendChild(tableCell);
+
+  let cellPosition = firstWeekday - 1 + i;
+
+  if (cellPosition % 7 === 0 && i !== numbersOfDays) {
+    row = document.createElement("tr");
+    calenderContent.appendChild(row);
+  }
+}
