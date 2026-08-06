@@ -68,7 +68,7 @@ let monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 // damit sie mit der Variable "currentDate" verglichen werden können.
 let holidays = ["01.01", "01.05", "03.10", "25.12", "26.12"];
 
-// Array mit den möglichen Vorkommen
+// Array was sagt, ob der wochentag der erst,zweite,... ect. ist, worauf ich dann später im Code dann zugreife.
 // eines Wochentags innerhalb eines Monats.
 let weekDayTimes = ["erste", "zweite", "dritte", "vierte"];
 
@@ -97,15 +97,12 @@ for (let i = 0; i < daysText.length; i++) {
   // getDay() liefert den passenden Index für das Array "days".
   daysText[i].textContent = days[today.getDay()];
 }
-
-// Den Zahlenwert des aktuellen Wochentags
-// in der Konsole ausgeben.
-// 0 = Sonntag, 1 = Montag, ..., 6 = Samstag.
-console.log(today.getDay());
-
 // Das HTML-Element mit der ID "month1" auswählen
 // und in der Variable "monthText" speichern.
-let monthText = document.getElementById("month1");
+let monthText = document.getElementsByClassName("month1");
+for (let i = 0; i < monthText.length; i++) {
+  monthText[i].textContent = months[today.getMonth()];
+}
 
 // Den Namen des aktuellen Monats in das HTML-Element schreiben.
 // getMonth() liefert den passenden Index für das Array "months".
@@ -122,6 +119,7 @@ yearText.textContent = today.getFullYear();
 // und in der Variable "weekDayTimesText" speichern.
 let weekDayTimesText = document.getElementById("weekDayTimes");
 
+monthText.textContent = months[today.getMonth()];
 // Berechnen, der wievielte gleiche Wochentag des Monats heute ist.
 // today.getDate() liefert den aktuellen Kalendertag.
 // Der Kalendertag wird durch 7 geteilt.
