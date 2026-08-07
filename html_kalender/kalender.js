@@ -193,30 +193,69 @@ if (holidays.includes(currentDate)) {
   holidaysText.textContent = "Heute ist kein Feiertag";
 }
 // bis hier hin ist alles für den obrigen Text
+
+
+// Das HTML-Element auswählen, in das der Kalender eingefügt werden soll
 let calenderContent = document.getElementById("calenderContent");
+
+// Aus dem Array die Anzahl der Tage des aktuellen Monats holen
 let numbersOfDays = monthDays[currentMonth];
 
+// Den Wochentag des 1. Tages des Monats bestimmen
+// getDay() liefert: 0 = Sonntag, 1 = Montag, ..., 6 = Samstag
 let firstWeekday = new Date(year, currentMonth, 1).getDay();
 
+// Falls der erste Tag ein Sonntag ist (0),
+// wird er auf 7 gesetzt, damit Montag = 1 und Sonntag = 7 ist
 if (firstWeekday === 0) {
   firstWeekday = 7;
 }
+
+// Die erste Tabellenzeile (<tr>) für den Kalender erstellen
 let row = document.createElement("tr");
+
+// Die erste Zeile in die Tabelle einfügen
 calenderContent.appendChild(row);
 
+// Leere Zellen vor dem ersten Kalendertag einfügen,
+// damit der 1. des Monats unter dem richtigen Wochentag erscheint
 for (i = 1; i < firstWeekday; i++) {
   let emptyCell = document.createElement("td");
   row.appendChild(emptyCell);
 }
+
+// Alle Kalendertage des Monats durchlaufen
 for (let i = 1; i <= numbersOfDays; i++) {
+
+  // Eine neue Tabellenzelle (<td>) erstellen
   let tableCell = document.createElement("td");
+
+  // Die aktuelle Tageszahl in die Zelle schreiben
   tableCell.textContent = i;
+
+  // Die Zelle an die aktuelle Tabellenzeile anhängen
   row.appendChild(tableCell);
 
+  // Berechnen, an welcher Position sich die Zelle insgesamt befindet
+  // (inklusive der leeren Zellen am Monatsanfang)
   let cellPosition = firstWeekday - 1 + i;
 
+  // Wenn die aktuelle Zellposition ohne Rest durch 7 teilbar ist 
+  // (also das Ende einer Kalenderwoche erreicht wurde) 
+  // UND der aktuelle Tag nicht der letzte Tag des Monats ist,
+  //  dann beginne eine neue Tabellenzeile.
   if (cellPosition % 7 === 0 && i !== numbersOfDays) {
+
+    // Neue Tabellenzeile erstellen
     row = document.createElement("tr");
+
+    // Neue Zeile an die Tabelle anhängen
     calenderContent.appendChild(row);
   }
+  if (cellPosition % 7 === 6 ) {
+    tableCell.classList.add("wochenende_1")
+}
+if (cellPosition % 7 === 0) {
+  tableCell.classList.add ("wochenende_2")
+}
 }
