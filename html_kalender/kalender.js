@@ -194,7 +194,6 @@ if (holidays.includes(currentDate)) {
 }
 // bis hier hin ist alles für den obrigen Text
 
-
 // Das HTML-Element auswählen, in das der Kalender eingefügt werden soll
 let calenderContent = document.getElementById("calenderContent");
 
@@ -217,45 +216,88 @@ let row = document.createElement("tr");
 // Die erste Zeile in die Tabelle einfügen
 calenderContent.appendChild(row);
 
-// Leere Zellen vor dem ersten Kalendertag einfügen,
-// damit der 1. des Monats unter dem richtigen Wochentag erscheint
-for (i = 1; i < firstWeekday; i++) {
-  let emptyCell = document.createElement("td");
-  row.appendChild(emptyCell);
-}
+let previousMonth = currentMonth - 1;
 
+if (previousMonth < 0) {
+  previousMonth = 11;
+}
+/* hier holt er die Anzahl der Tage aus meinem erstellten Array und deklariert "daysInPreviousMonth
+"damit */
+let daysInPreviousMonth = monthDays[previousMonth];
+/*sagt an welche stelle die Zelle des vorhereigen Monat gesehen von der ersten Zelle des aktuellen
+monats beginnen soll.  */
+let previousMonthCells = firstWeekday - 1;
+/* hier wird gesagt an welchem Tag das angezeigte vom letzten Monat der erste 
+in der Zeile sein soll.  */
+let startPreviousMonth = daysInPreviousMonth - previousMonthCells + 1;
+/* hier macht man eine for-Schleife um bis zum aktuellen monat die Tage des
+ letzten monats anzuzeigen */
+for (let i = startPreviousMonth; i <= daysInPreviousMonth; i++) {
+  let previousMonthCell = document.createElement("td");
+
+  previousMonthCell.textContent = i;
+  previousMonthCell.classList.add("previousMonth");
+  row.appendChild(previousMonthCell);
+}
 // Alle Kalendertage des Monats durchlaufen
 for (let i = 1; i <= numbersOfDays; i++) {
-
   // Eine neue Tabellenzelle (<td>) erstellen
   let tableCell = document.createElement("td");
-
-  // Die aktuelle Tageszahl in die Zelle schreiben
-  tableCell.textContent = i;
-
-  // Die Zelle an die aktuelle Tabellenzeile anhängen
-  row.appendChild(tableCell);
-
-  // Berechnen, an welcher Position sich die Zelle insgesamt befindet
-  // (inklusive der leeren Zellen am Monatsanfang)
+  if (i === today.getDate()) {
+    tableCell.classList.add("heute");
+    //wenn "i" bei dem heutigen Tag angekommen ist dann erzeuge eine neue Zelle
+  }
+  //hier sage ich, dass die Variable "cellPositon" beim ersten startet und muss um eins zurrückgezählt werden
+  //da wenn ich immer um eins erweitern will, wird er immer einen tag voraus liegen,
+  //deswegen müssen wir zurrück rechnen und dann i++ arbeiten lassen.
   let cellPosition = firstWeekday - 1 + i;
-
-  // Wenn die aktuelle Zellposition ohne Rest durch 7 teilbar ist 
-  // (also das Ende einer Kalenderwoche erreicht wurde) 
-  // UND der aktuelle Tag nicht der letzte Tag des Monats ist,
-  //  dann beginne eine neue Tabellenzeile.
+  //hier sagt man " wenn der Restwert 6 ist dann füge eine Zelle namens wochenende_1 hinzu "
+  if (cellPosition % 7 == 6) {
+    tableCell.classList.add("wochenende_1");
+  }
+  //hier sage ich füge jedesmal eine Zelle hinzu, wenn der Rest wert 0 ist.
+  if (cellPosition % 7 == 0) {
+    tableCell.classList.add("wochenende_2");
+  }
+  //hängt tableCell als Kind an row an. Fügt dem gewünschten Element ein anderes Element hinzu
+  row.appendChild(tableCell);
+  // so schreibe ich die aktuelle Tageszahl in die Zelle
+  tableCell.textContent = i;
+  // Wenn die Zellenposition ohne Rest durch 7 teilbar ist (Sonntag)
+  // und der aktuelle Tag "i" nicht der letzte Tag des Monats ist,
+  // wird eine neue Tabellenzeile erstellt.
   if (cellPosition % 7 === 0 && i !== numbersOfDays) {
-
-    // Neue Tabellenzeile erstellen
+    /* hier soll row eine neue Zeile erstellen */
     row = document.createElement("tr");
-
-    // Neue Zeile an die Tabelle anhängen
+    /* damit füge ich meinem Kalender die zeile hinzu */
     calenderContent.appendChild(row);
   }
-  if (cellPosition % 7 === 6 ) {
-    tableCell.classList.add("wochenende_1")
 }
-if (cellPosition % 7 === 0) {
-  tableCell.classList.add ("wochenende_2")
-}
+
+/* hier muss ich -1 rechnen damit i richtig um eins hochzählt ansonsten wäre 
+Lastposition um eine platz vorgerrückt. */
+let lastPosition = firstWeekday - 1 + numbersOfDays;
+/* hier erstelle ich eine Variable namens "remainingCelss", man rechnet von ganz innen 
+nach außen.
+ich muss also erstmal die letzte position vom Kalender % 7,
+Dann rechne ich 7 minus dem Ergebnis aus der inneren Klammer, das Ergebnis
+sagt mir auf Welche Postion der Woche z.b "Montag" liegt. Dann rechne ich das Ergebis minus
+der 7, um die Anzahl der restlichen Kästchen zu bekommen.  das letzte % 7 sagt quasi nur,
+dass javascript nicht denken soll, dass wenn er z.b 7 - 0 rechnet mir dann 7 zellen gibt,
+sondern dann 0.
+*/
+let remainingCells = (7 - (lastPosition % 7)) % 7;
+
+/* jetzt muss ich das in einer schleife angeben, dass er solange Zellen des nächsten Monats 
+erstellen soll, bis kleiner gleich "remainingCells"*/
+for (let i = 1; i <= remainingCells; i++) {
+  /*  hier erstelle ich eine Variable und lasse sie ein td Element erstellen */
+  let nextMonthCell = document.createElement("td");
+  /*  jetzt soll der aktuelle Wert von i eingefügt werden */
+  nextMonthCell.textContent = i;
+  /* damit bekommt "nextMonthCell" eine Klasse für CSS 
+  wird gemacht, damit man nach belieben dann in der CSS datei  die Klasse bearbeiten kann */
+  nextMonthCell.classList.add("nextMonth");
+  /* jetzt füge ich die erstellte Zelle der Zeile hinzu. */
+  row.appendChild(nextMonthCell);
 }

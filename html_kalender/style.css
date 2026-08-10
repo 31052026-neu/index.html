@@ -145,9 +145,16 @@ p {
   font-size: 28px;
 }
 .heute {
-  background-color: #ffd900;
-  color: black;
+  background-color: #0a831a3a;
+  color: rgb(243, 234, 234);
   font-weight: bold;
-  border: 5px solid white;
+  border: 5px solid rgba(31, 245, 11, 0.397);
   transform: scale(1.08);
+}
+.nextMonth {
+  opacity: 0.6;
+  transform: scale(1.08);
+}
+.previousMonth {
+  opacity: 0.5;
 }
