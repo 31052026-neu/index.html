@@ -18,8 +18,16 @@ h1 {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 1.8);
 }
 ul {
-  padding-left: 15%;
+  padding-left: 5%;
   font-size: 250%;
   color: rgb(230, 216, 216);
   text-shadow: 2px 2px 15px #f80505;
+  margin-bottom: 29px;
+}
+#ereignis li {
+  padding-left: 5%;
+  font-size: 125%;
+  color: rgb(230, 216, 216);
+  text-shadow: 2px 2px 15px #f80505;
+  margin-bottom: 30px;
 }
